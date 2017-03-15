@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+@author Daniel Pelaez
 public class class1 {
 	
 	public void consultarCiudades(){
