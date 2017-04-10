@@ -7,7 +7,7 @@ import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.exception.MyException;
 
 /**
- * @author sergio.llanos
+ * @Daniel Pelaez
  * @version 1.0
  * 
  */
