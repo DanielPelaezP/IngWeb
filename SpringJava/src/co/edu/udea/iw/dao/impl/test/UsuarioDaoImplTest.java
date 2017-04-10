@@ -12,6 +12,12 @@ import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
+@author Daniel Pelaez
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@Transactional
+@ContextConfiguration(locations = "classpath:SpringConfig.xml")
+public class UsuarioDAOImplTest {
 public class UsuarioDaoImplTest {
 
 	@Test
