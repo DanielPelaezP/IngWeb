@@ -20,12 +20,14 @@ import co.edu.udea.iw.dto.Rol;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.MyException;
 
+@author Daniel Pelaez
+ 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 @ContextConfiguration(locations="classpath:configurationSpring.xml")
 public class ClienteDAOImplTest {
 	@Autowired
-	ClienteDAO clienteDAO;
+	private ClienteDAO clienteDAO;
 	@Test
 	public void testObtener() {
 		
@@ -50,7 +52,7 @@ public class ClienteDAOImplTest {
 	public void testGuardar(){
 		
 		Cliente cliente = null;
-		ClienteDAO clienteDao = null;
+		//ClienteDAO clienteDao = null;
 		Usuario usuario = null;
 		try{
 			
@@ -65,10 +67,11 @@ public class ClienteDAOImplTest {
 			usuario.setLogin("elver");
 			cliente.setUsuarioCrea(usuario);
 			cliente.setFechaCreacion(new Date(Calendar.getInstance().getTimeInMillis()));
-			clienteDao = new ClienteDAOImpl();
-			clienteDao.guardar(cliente);
+			//clienteDao = new ClienteDAOImpl();
+			clienteDAO.guardar(cliente);
 		}catch(MyException e){
 			e.printStackTrace();
+			fail(e.getMessage());
 			
 		}
 	}
