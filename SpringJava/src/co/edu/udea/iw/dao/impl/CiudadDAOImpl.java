@@ -23,14 +23,14 @@ public class CiudadDAOImpl implements CiudadDAO {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-
-	public List<Ciudad> obtener() throws MyException{
+	@Override
+	public List<Ciudad> obtener() throws MyException{ // retorna las cuidades del metodo obtener
 		List<Ciudad> lista = new ArrayList<Ciudad>();
 		Session session=null;
 		try{
 			session = sessionFactory.getCurrentSession();
 			Criteria criteria=session.createCriteria(Ciudad.class);
-			lista= criteria.list();
+			lista=  (List<Ciudad>)criteria.list();
 		}catch (HibernateException e){
 			throw new MyException("Error consultando ciudades", e);
 		}
@@ -64,7 +64,7 @@ public class CiudadDAOImpl implements CiudadDAO {
 		
 	Session session=null;
 	try{
-		sessionFactory.getCurrentSession();
+		session = sessionFactory.getCurrentSession();
 		session.save(ciudad);		
 	}catch(HibernateException e){
 		throw new MyException("Error consultando ciudades",e);
