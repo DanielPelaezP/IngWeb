@@ -30,7 +30,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 
 
-	//Met
+	//retorna un usuario por clave
 	public Usuario obtener(String login) throws MyException{
 	Usuario usuario=null;
 	Session session=null;
