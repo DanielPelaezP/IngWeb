@@ -26,7 +26,7 @@ import javassist.ClassPath;
 public class CiudadDAOImplTest {
 	
 	@Autowired //inicializa el objeto CiudadDAO
-	CiudadDAO ciudadDAO;
+	private CiudadDAO ciudadDAO;
 	//Prueba que se realiza para demostrar que la lista retorna al menos 1 elemento
 	@Test
 	public void testObtener() {
